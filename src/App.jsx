@@ -11,7 +11,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:4000/api/data', {
+    await axios.post('https://mongo-aggregation-backend.onrender.com/api/data', {
       ...form,
       price: Number(form.price)
     });
@@ -20,7 +20,7 @@ function App() {
   };
 
   const fetchData = async () => {
-    const res = await axios.get('http://localhost:4000/api/aggregate');
+    const res = await axios.get('https://mongo-aggregation-backend.onrender.com/api/aggregate');
     setAggregatedData(res.data);
   };
 
